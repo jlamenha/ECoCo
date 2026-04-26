@@ -1,0 +1,17 @@
+# frontend/Dockerfile.dev
+
+FROM node:20-alpine
+
+WORKDIR /app
+
+# Install dependencies once (layered)
+COPY package*.json ./
+RUN npm install
+
+# Copy the rest (initially – will later be overridden by volume)
+COPY . .
+
+# Vite dev server
+EXPOSE 5173
+
+CMD ["npm", "run", "dev", "--", "--host", "0.0.0.0", "--port", "5173"]

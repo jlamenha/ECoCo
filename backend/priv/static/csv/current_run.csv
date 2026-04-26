@@ -1,0 +1,10 @@
+model,consistency_score,successful_queries,failed_queries,unique_results,total_queries,model_result_rank,is_top_result
+minimax/minimax-m2.5,0.1875,32,4,15,36,8,false
+google/gemini-3-flash-preview,0.34210526315789475,38,2,14,40,4,false
+moonshotai/kimi-k2.5,0.2777777777777778,18,0,10,18,5,false
+deepseek/deepseek-chat-v3-0324,0.6,25,15,7,40,3,false
+anthropic/claude-sonnet-4.6,1.0,39,1,1,40,1,true
+qwen/qwen3-coder,0.575,40,0,8,40,2,false
+openai/gpt-oss-120b,0.10344827586206896,29,11,25,40,1,true
+x-ai/grok-4.1-fast,0.11428571428571428,35,5,25,40,15,false
+stepfun/step-3.5-flash,0.24324324324324326,37,3,25,40,7,false

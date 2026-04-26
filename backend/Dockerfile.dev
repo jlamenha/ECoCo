@@ -1,0 +1,30 @@
+# backend/Dockerfile.dev
+
+FROM elixir:1.16-alpine
+
+# Tools for compilation & DB
+RUN apk add --no-cache build-base git inotify-tools postgresql-client
+
+# Python for visualization scripts
+RUN apk add --no-cache python3 py3-pip py3-numpy py3-pandas py3-matplotlib
+RUN pip3 install --break-system-packages seaborn
+
+WORKDIR /app
+
+# Hex & Rebar
+RUN mix local.hex --force && mix local.rebar --force
+
+# Fetch deps (layered)
+COPY mix.exs mix.lock ./
+COPY config ./config
+RUN mix deps.get
+
+# Copy rest (initially; will also be overridden by volume)
+COPY . .
+
+ENV MIX_ENV=dev
+EXPOSE 4000
+
+# Start Phoenix dev server after ensuring DB is ready
+CMD ["sh", "-c", "mix deps.get && mix ecto.create && mix ecto.migrate && mix phx.server"]
+

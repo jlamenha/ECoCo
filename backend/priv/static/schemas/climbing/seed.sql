@@ -1,0 +1,52 @@
+-- climbing.mountain
+INSERT INTO climbing.mountain (Mountain_ID, Name, Height, Prominence, Range, Country) VALUES
+(1, 'Mt. Lubowitz', 7377, 1501, 'Pamir', 'France'),
+(2, 'Mt. Huel', 8755, 2897, 'Rockies', 'Russia'),
+(3, 'Mt. Ritchie', 6126, 708, 'Andes', 'Pakistan'),
+(4, 'Mt. Stanton', 6577, 2361, 'Pamir', 'USA'),
+(5, 'Mt. Farrell', 7503, 1630, 'Alps', 'USA'),
+(6, 'Mt. Kunde', 4446, 2018, 'Karakoram', 'Argentina'),
+(7, 'Mt. Kuvalis', 6067, 3627, 'Alaska Range', 'China'),
+(8, 'Mt. Friesen', 5538, 1952, 'Karakoram', 'Tanzania'),
+(9, 'Mt. Shanahan', 6518, 2645, 'Alaska Range', 'Italy'),
+(10, 'Mt. Parker', 5662, 1564, 'Tian Shan', 'Switzerland'),
+(11, 'Mt. Padberg', 7245, 2551, 'Tian Shan', 'China'),
+(12, 'Mt. Marquardt', 7703, 1353, 'Himalayas', 'Bolivia'),
+(13, 'Mt. Mertz', 7041, 3032, 'Caucasus', 'Pakistan'),
+(14, 'Mt. Pouros', 4742, 2935, 'Caucasus', 'Chile'),
+(15, 'Mt. Baumbach', 8485, 3446, 'Rockies', 'Chile')
+;
+
+-- climbing.climber
+INSERT INTO climbing.climber (Climber_ID, Name, Country, Time, Points, Mountain_ID) VALUES
+(1, 'Opal Pouros', 'Spain', '14:59', 158, 6),
+(2, 'Mrs. Carol Okuneva', 'Austria', '11:39', 223, 5),
+(3, 'Floyd Mayert', 'USA', '8:10', 495, 14),
+(4, 'Dr. Sylvester Gerhold-Maggio', 'Canada', '6:17', 122, 10),
+(5, 'Jenna Klein', 'UK', '16:59', 183, 14),
+(6, 'Dr. Patrick Quitzon', 'Switzerland', '12:27', 179, 5),
+(7, 'Spencer Kiehn', 'Switzerland', '13:06', 305, 2),
+(8, 'Teresa Marvin', 'UK', '12:48', 437, 13),
+(9, 'Carrie Kassulke', 'UK', '17:07', 140, 13),
+(10, 'Laurie McCullough', 'Canada', '10:48', 220, 11),
+(11, 'Nichole Cartwright', 'UK', '3:38', 344, 15),
+(12, 'Mrs. Meredith Beatty', 'Nepal', '15:34', 405, 7),
+(13, 'Dr. Sally Johnson DVM', 'Poland', '10:10', 91, 7),
+(14, 'Ms. Doreen Ferry', 'USA', '11:18', 186, 15),
+(15, 'Karen Hirthe-Boyer', 'New Zealand', '11:37', 204, 12),
+(16, 'Misty Dicki MD', 'Austria', '15:12', 61, 5),
+(17, 'Dennis Emard', 'Germany', '11:04', 185, 10),
+(18, 'Hazel Crooks', 'Italy', '7:21', 335, 1),
+(19, 'Patti Rath PhD', 'Canada', '17:00', 482, 7),
+(20, 'Dr. Charles Sipes', 'South Korea', '16:21', 57, 11),
+(21, 'Sherri Lindgren', 'Germany', '3:05', 308, 10),
+(22, 'Terry White', 'Japan', '7:25', 51, 8),
+(23, 'Jane Stiedemann', 'Poland', '17:11', 357, 14),
+(24, 'Grace Roob', 'Germany', '12:48', 472, 14),
+(25, 'Deanna Hansen PhD', 'Canada', '8:38', 482, 7),
+(26, 'Catherine Mitchell', 'South Korea', '6:07', 136, 11),
+(27, 'Kelvin Littel', 'Poland', '6:16', 311, 4),
+(28, 'Rochelle Satterfield', 'Italy', '14:46', 480, 10),
+(29, 'Juanita Padberg', 'UK', '15:41', 206, 15),
+(30, 'Miss Deborah Erdman', 'Italy', '10:16', 470, 5)
+;
