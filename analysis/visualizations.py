@@ -347,7 +347,13 @@ col_labels = {
     'total_unique_confidence_results': 'Unique Confidence Results',
     'model_result_rank': 'Result Rank',
 }
+# Use df for num_queries correlations (all snapshots), last_snap_model for the rest
 corr_matrix = df[numeric_cols].rename(columns=col_labels).corr()
+non_queries_cols = [c for c in numeric_cols if c != 'num_queries']
+corr_snap = last_snap_model[non_queries_cols].rename(columns=col_labels).corr()
+for col in corr_snap.columns:
+    for row in corr_snap.index:
+        corr_matrix.loc[row, col] = corr_snap.loc[row, col]
 mask = np.triu(np.ones_like(corr_matrix, dtype=bool))
 sns.heatmap(corr_matrix, mask=mask, annot=True, fmt='.2f', cmap='coolwarm',
             center=0, ax=ax, cbar_kws={'label': 'Correlation'}, annot_kws={'size': 16})
